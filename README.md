@@ -7,7 +7,7 @@ inspired by [webworkify](https://github.com/substack/webworkify)
 # install
 
 ```sh
-npm install webworkify-webpack --save
+npm install https://github.com/gameeos/webworkify-webpack.git --save
 ```
 
 # v2 vs v1
