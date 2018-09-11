@@ -197,7 +197,7 @@ module.exports = function (moduleId, options) {
   var workerUrl = URL.createObjectURL(blob)
   var worker;
   if (options.shared) {
-     worker = new window.SharedWorker(workerUrl) 
+     worker = new window.SharedWorker(workerUrl,options.name) 
      worker.objectURL = workerUrl
   } else {
      worker = new window.Worker(workerUrl)
