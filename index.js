@@ -195,8 +195,13 @@ module.exports = function (moduleId, options) {
   var URL = window.URL || window.webkitURL || window.mozURL || window.msURL
 
   var workerUrl = URL.createObjectURL(blob)
-  var worker = new window.Worker(workerUrl)
-  worker.objectURL = workerUrl
-
+  var worker;
+  if (options.shared) {
+     worker = new window.SharedWorker(workerUrl) 
+     worker.objectURL = workerUrl
+  } else {
+     worker = new window.Worker(workerUrl)
+     worker.objectURL = workerUrl
+  }
   return worker
 }
